@@ -1,17 +1,13 @@
- def is_prime n
-  for d in 2..(n - 1)
-   if (n % d) == 0
-    return false
-   end
+def get_prime_no_upto(number)
+  start = 2
+  primes = (start..number).to_a
+  (start..number).each do |no|
+    (start..no).each do |num|
+      if ( no % num  == 0) && num != no
+        primes.delete(no)
+        break
+      end
+    end
   end
-
-  true
- end
-
- def is_prime2 n
-  foundDivider = false
-   for d in 2..(n - 1)
-    foundDivider = ((n % d) == 0) or foundDivider
-   end
-  not foundDivider
- end
+  primes
+end
