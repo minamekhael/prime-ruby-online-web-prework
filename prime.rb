@@ -1,5 +1,5 @@
-primes = []
 def prime_numbers(n)
+  primes = []
   i = 2
   while @primes.size < n do
     @primes << i if is_prime?(i)
@@ -11,5 +11,4 @@ end
 def is_prime?(n)
   @primes.each { |prime| return false if n % prime == 0 }
   true
-end
 end
